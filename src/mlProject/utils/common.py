@@ -9,11 +9,13 @@ from box import ConfigBox
 from pathlib import Path
 from typing import Any
 
+
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
-    """ reads yaml file and returns
+    """reads yaml file and returns
+
     Args:
-    path_to_yaml (str): path like input
+        path_to_yaml (str): path like input
 
     Raises:
         ValueError: if yaml file is empty
@@ -21,11 +23,7 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
 
     Returns:
         ConfigBox: ConfigBox type
-
-    
     """
-
-
     try:
         with open(path_to_yaml) as yaml_file:
             content = yaml.safe_load(yaml_file)
@@ -108,7 +106,7 @@ def load_bin(path: Path) -> Any:
     logger.info(f"binary file loaded from: {path}")
     return data
 
-def get_size(path: path):
+def get_size(path: Path):
     """ get size in KB
     Args:
         path (path): path to file
